@@ -172,12 +172,28 @@ export default function Home() {
           </h2>
 
           <form
-            className="mt-9 flex flex-col gap-4 sm:flex-row"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Спасибо. CalmPath скоро свяжется с вами.");
-            }}
-          >
+  className="mt-9 flex flex-col gap-4 sm:flex-row"
+  action="https://formspree.io/f/xqeoyqdj"
+  method="POST"
+>
+  <input
+    type="email"
+    name="email"
+    required
+    placeholder={t.email}
+    className="min-h-13 flex-1 rounded-full border border-white/10 bg-white/5 px-6 py-4 text-white outline-none placeholder:text-white/35 focus:border-teal-300/60"
+  />
+
+  <input
+    type="hidden"
+    name="source"
+    value="getcalmpath.com early access"
+  />
+
+  <button className="min-h-13 rounded-full bg-teal-300 px-7 py-4 font-medium text-[#06201e]">
+    {t.submit}
+  </button>
+</form>
             <input
               type="email"
               required
